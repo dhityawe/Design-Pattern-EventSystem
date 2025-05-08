@@ -41,7 +41,7 @@ design-patterns-game/
 - `UI/SoundSystem/ScoreSystem` - Concrete observers reacting to events
 
 **Communication Flow:**
-
+Player.attack() → Notifies all registered IObserver objects
 
 ### 2. Mediator Pattern Version  
 **Pattern Used:** [Mediator](https://refactoring.guru/design-patterns/mediator )  
@@ -51,3 +51,26 @@ design-patterns-game/
 - `UI/SoundSystem/ScoreSystem` - Subscribe to events via the mediator
 
 **Communication Flow:**
+Player → EventMediator.publish("AttackOccurred")
+↳ All subscribers receive event
+
+
+## ⚙️ How to Compile & Run
+
+### Observer Pattern Version
+```bash
+g++ observer_version/main.cpp observer_version/Player.cpp \
+    observer_version/Enemy.cpp observer_version/UI.cpp \
+    observer_version/SoundSystem.cpp observer_version/ScoreSystem.cpp \
+    -o observer_game
+
+./observer_game
+
+### Mediator Pattern Version
+```bash
+g++ mediator_version/main.cpp mediator_version/EventMediator.cpp \
+    mediator_version/Player.cpp mediator_version/Enemy.cpp \
+    mediator_version/UI.cpp mediator_version/SoundSystem.cpp \
+    mediator_version/ScoreSystem.cpp -o mediator_game
+
+./mediator_game
