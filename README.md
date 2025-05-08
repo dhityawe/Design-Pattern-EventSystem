@@ -7,30 +7,6 @@ Demonstrate understanding of **Observer** and **Mediator** design patterns by im
 - Multiple systems (UI, Sound, Score) respond to the attack event
 - Communication is handled differently in each pattern
 
-## 📁 Project Structure
-
-design-patterns-game/
-├── observer_version/ # Observer Pattern implementation
-│ ├── main.cpp
-│ ├── Player.h/.cpp
-│ ├── Enemy.h/.cpp
-│ ├── IObserver.h
-│ ├── UI.h/.cpp
-│ ├── SoundSystem.h/.cpp
-│ └── ScoreSystem.h/.cpp
-│
-├── mediator_version/ # Mediator Pattern implementation
-│ ├── main.cpp
-│ ├── EventMediator.h/.cpp
-│ ├── Player.h/.cpp
-│ ├── Enemy.h/.cpp
-│ ├── UI.h/.cpp
-│ ├── SoundSystem.h/.cpp
-│ └── ScoreSystem.h/.cpp
-│
-└── README.md # This file
-
-
 ## 🔍 Pattern Implementations
 
 ### 1. Observer Pattern Version  
@@ -53,23 +29,3 @@ Player.attack() → Notifies all registered IObserver objects
 **Communication Flow:**
 Player → EventMediator.publish("AttackOccurred")
 ↳ All subscribers receive event
-
-
-## ⚙️ How to Compile & Run
-
-### Observer Pattern Version
-```bash
-g++ observer_version/main.cpp observer_version/Player.cpp \
-    observer_version/Enemy.cpp observer_version/UI.cpp \
-    observer_version/SoundSystem.cpp observer_version/ScoreSystem.cpp \
-    -o observer_game
-
-./observer_game
-
-### Mediator Pattern Version
-g++ mediator_version/main.cpp mediator_version/EventMediator.cpp \
-    mediator_version/Player.cpp mediator_version/Enemy.cpp \
-    mediator_version/UI.cpp mediator_version/SoundSystem.cpp \
-    mediator_version/ScoreSystem.cpp -o mediator_game
-
-./mediator_game
