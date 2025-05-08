@@ -66,7 +66,7 @@ g++ observer_version/main.cpp observer_version/Player.cpp \
 
 ./observer_game
 
-Mediator Pattern Version
+### Mediator Pattern Version
 g++ mediator_version/main.cpp mediator_version/EventMediator.cpp \
     mediator_version/Player.cpp mediator_version/Enemy.cpp \
     mediator_version/UI.cpp mediator_version/SoundSystem.cpp \
